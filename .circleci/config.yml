@@ -17,6 +17,11 @@ jobs:
     # A list of available CircleCI Docker Convenience Images are available here: https://circleci.com/developer/images/image/cimg/node
     docker:
       - image: cimg/node:15.1
+      - image: circleci/postgres:9.6.2-alpine
+        environment:
+          POSTGRES_DB: postgres_db
+          POSTGRES_PASSWORD: "admin_12345678"
+          POSTGRES_USER: admin_db
     # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
     steps:
@@ -30,9 +35,7 @@ jobs:
       #     pkg-manager: yarn 
       - run:
           name: Run tests
-          command: 
-            docker-compose up -d
-            npm test
+          command: npm test
 
 workflows:
   # Below is the definition of your workflow.

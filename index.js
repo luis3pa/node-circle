@@ -9,8 +9,8 @@ var corsOptions = {
     origin: '*', // Reemplazar con dominio
     optionsSuccessStatus: 200 //
 }
-app.use(cors(corsOptions));
 
+app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 

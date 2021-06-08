@@ -26,4 +26,4 @@ services:
       - '3000:3000'
         
 volumes:
-  addressbook-db:
+  addressbook-db:  
